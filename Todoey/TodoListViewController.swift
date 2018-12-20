@@ -10,12 +10,13 @@ import UIKit
 
 class TodoListViewController: UITableViewController{
     
-    let itemArray = ["Play Football", "Code with death", "Pass 498", "dog", "CAT", "fart"]
+    var itemArray = ["Play Football", "Code with death", "Pass 498", "dog", "CAT", "fart"]
     
     func getColor(forItemAt indexPath: Int) -> UIColor{
-        let val = 1*(1-CGFloat(indexPath)*0.15)
-        let red = val >= 0 ? val : 0
-        return UIColor(displayP3Red: red, green: 0, blue: 0, alpha: 0.85)
+//        let val = 1*(1-CGFloat(indexPath)*0.15)
+//        let red = val >= 0 ? val : 0
+//        return UIColor(displayP3Red: red, green: 0, blue: 0, alpha: 0.85)
+        return UIColor(displayP3Red: 1, green: 1, blue: 0.8, alpha: 1)
     }
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class TodoListViewController: UITableViewController{
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    // Create tableview datasource methods
+    //MARK: Create tableview datasource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemArray.count
@@ -36,7 +37,7 @@ class TodoListViewController: UITableViewController{
         return cell
     }
     
-    // Create TableView Delegate Methods
+    //MARK: Create TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(itemArray[indexPath.row])
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
@@ -48,6 +49,27 @@ class TodoListViewController: UITableViewController{
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+    //MARK: Add new items
+    
+
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
+        var textField = UITextField()
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            //What will happen when user clicks the add item button on the UI alert
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(action)
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 
