@@ -9,18 +9,22 @@
 import UIKit
 
 class TodoListViewController: UITableViewController{
-    
-    var itemArray = ["Play Football", "Code with death", "Pass 498", "dog", "CAT", "fart"]
-    
+    let todoArrayKey = "todoItemArray"
+    var itemArray = [String]()
+    let defaults = UserDefaults.standard
     func getColor(forItemAt indexPath: Int) -> UIColor{
 //        let val = 1*(1-CGFloat(indexPath)*0.15)
 //        let red = val >= 0 ? val : 0
 //        return UIColor(displayP3Red: red, green: 0, blue: 0, alpha: 0.85)
-        return UIColor(displayP3Red: 1, green: 1, blue: 0.8, alpha: 1)
+        return UIColor(displayP3Red: 0.9, green: 0.9, blue: 1, alpha: 1)
     }
     
     override func viewDidLoad() {
+        if let items = defaults.array(forKey: todoArrayKey) as? [String]{
+            self.itemArray = items
+        }
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -59,6 +63,7 @@ class TodoListViewController: UITableViewController{
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //What will happen when user clicks the add item button on the UI alert
             self.itemArray.append(textField.text!)
+            self.defaults.set(self.itemArray, forKey: self.todoArrayKey)
             self.tableView.reloadData()
         }
         
