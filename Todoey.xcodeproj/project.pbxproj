@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF390B2321CB4FDE0010F9FF /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF390B2221CB4FDE0010F9FF /* TodoItem.swift */; };
+		EF390B6F21CC7E6A0010F9FF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF390B6D21CC7E6A0010F9FF /* Model.xcdatamodeld */; };
+		EF390B7121CCA0380010F9FF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF390B7021CCA0380010F9FF /* CategoryViewController.swift */; };
 		EFC6814C21C86DE2005DADC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6814B21C86DE2005DADC0 /* AppDelegate.swift */; };
 		EFC6814E21C86DE2005DADC0 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6814D21C86DE2005DADC0 /* TodoListViewController.swift */; };
 		EFC6815121C86DE2005DADC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC6814F21C86DE2005DADC0 /* Main.storyboard */; };
@@ -16,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF390B2221CB4FDE0010F9FF /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		EF390B6E21CC7E6A0010F9FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EF390B7021CCA0380010F9FF /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		EFC6814821C86DE2005DADC0 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC6814B21C86DE2005DADC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC6814D21C86DE2005DADC0 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		EF390B2521CB504C0010F9FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EFC6814B21C86DE2005DADC0 /* AppDelegate.swift */,
+				EF390B7021CCA0380010F9FF /* CategoryViewController.swift */,
 				EFC6814D21C86DE2005DADC0 /* TodoListViewController.swift */,
 			);
 			path = Controller;
@@ -57,7 +59,7 @@
 		EF390B2621CB50530010F9FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF390B2221CB4FDE0010F9FF /* TodoItem.swift */,
+				EF390B6D21CC7E6A0010F9FF /* Model.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +92,7 @@
 		EFC6814A21C86DE2005DADC0 /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
+				EFC6814B21C86DE2005DADC0 /* AppDelegate.swift */,
 				EF390B2721CB505E0010F9FF /* Supporting Files */,
 				EF390B2621CB50530010F9FF /* Model */,
 				EF390B2521CB504C0010F9FF /* Controller */,
@@ -170,9 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF390B7121CCA0380010F9FF /* CategoryViewController.swift in Sources */,
 				EFC6814E21C86DE2005DADC0 /* TodoListViewController.swift in Sources */,
-				EF390B2321CB4FDE0010F9FF /* TodoItem.swift in Sources */,
 				EFC6814C21C86DE2005DADC0 /* AppDelegate.swift in Sources */,
+				EF390B6F21CC7E6A0010F9FF /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +376,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF390B6D21CC7E6A0010F9FF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF390B6E21CC7E6A0010F9FF /* Model.xcdatamodel */,
+			);
+			currentVersion = EF390B6E21CC7E6A0010F9FF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EFC6814021C86DE2005DADC0 /* Project object */;
 }
